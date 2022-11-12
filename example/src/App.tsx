@@ -1,18 +1,20 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-mytracker';
+import { StyleSheet, Text, View } from 'react-native';
+import MyTracker from 'react-native-mytracker';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  MyTracker.initTracker('initTracker');
 
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  // MyTracker.trackEvent('trackEvent');
 
+  // MyTracker.trackEvent('trackEventWithParams', {
+  //   event1: '1',
+  //   event2: '2',
+  // });
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Result</Text>
     </View>
   );
 }

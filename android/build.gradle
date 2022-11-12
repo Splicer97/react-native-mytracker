@@ -126,6 +126,7 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
+    implementation 'com.my.tracker:mytracker-sdk:3.0.10'
 // From node_modules
 }
 
