@@ -1,7 +1,7 @@
 import * as React from 'react';
 
+import MyTracker from '@splicer97/react-native-mytracker';
 import { StyleSheet, Text, View } from 'react-native';
-import MyTracker from 'react-native-mytracker';
 
 export default function App() {
   MyTracker.initTracker('initTracker');
