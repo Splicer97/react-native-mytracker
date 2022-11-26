@@ -5,7 +5,7 @@ interface IMyTracker {
   trackEvent(name: string): void;
   trackEventWithParams(name: string, attributes: Object): void;
   setCustomUserId(USER_ID: string): void;
-  trackLoginEvent(userId: string, vkConnectId: string): void;
+  trackLoginEvent(userId: string, vkConnectId?: string): void;
   trackLoginEventWithParams(
     userId: string,
     vkConnectId: string,
@@ -14,7 +14,7 @@ interface IMyTracker {
   trackInviteEvent(): void;
   trackInviteEventWithParams(attributes: Object): void;
   flush(): void;
-  trackRegistrationEvent(userId: string, vkConnectId: string): void;
+  trackRegistrationEvent(userId: string, vkConnectId?: string): void;
   trackRegistrationEventWithParams(
     userId: string,
     vkConnectId: string,
