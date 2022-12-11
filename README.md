@@ -14,6 +14,12 @@ or
 yarn add @splicer97/react-native-mytracker
 ```
 
+then install pod
+
+```sh
+cd ios && pod install
+```
+
 ## Usage
 
 ```js
