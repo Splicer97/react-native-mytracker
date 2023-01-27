@@ -44,22 +44,22 @@ MyTracker.bufferingPeriod(30);
 MyTracker.forcingPeriod(30);
 
 //for IOS:
-// 0 = MRLocationTrackingModeNone — отслеживание местоположения не производится
-// 1 = MRLocationTrackingModeCached — используется закэшированное системой значение
-// 2 = MRLocationTrackingModeActive — используется запрос текущего местоположения (по умолчанию)
+// 0 = MRLocationTrackingModeNone — location is not tracked
+// 1 = MRLocationTrackingModeCached — uses the system's cached value
+// 2 = MRLocationTrackingModeActive — uses a request for the current location (default)
 // for Android:
-// 0 = false - не отслеживать местоположение пользователя (по умолчанию)
-// 1 or 2 = true - отслеживать местоположение пользователя
+// 0 = false - do not track the user's location (default)
+// 1 or 2 = true - track the user's location
 MyTracker.trackLocation(0);
 
 //for IOS:
-// 0 = MRRegionNotSet — значение по умолчанию
-// 1 = MRRegionRu — сервер, расположенный на территории Российской Федерации
-// 2 = MRRegionEu — сервер, расположенный на территории Европы
+// 0 = MRRegionNotSet — default value
+// 1 = MRRegionRu — server located on the territory of the Russian Federation
+// 2 = MRRegionEu — server located in Europe
 // for Android:
-// 0 - значение по умолчанию
-// 1 = Region.RU — сервер, расположенный на территории Российской Федерации
-// 2 = Region.EU — сервер, расположенный на территории Европы
+// 0 - default value
+// 1 = Region.RU — server located on the territory of the Russian Federation
+// 2 = Region.EU — server located in Europe
 MyTracker.region(0);
 
 MyTracker.setDebugMode(false);
