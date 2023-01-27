@@ -1,7 +1,7 @@
 import { NativeModules } from 'react-native';
 
 interface IMyTracker {
-    /**
+  /**
    * Initializing the tracker
    */
   initTracker(SDK_KEY: string): void;
@@ -18,11 +18,11 @@ interface IMyTracker {
    * It is important to set the parameter before event tracking to pass the user ID with each tracked event.
    */
   setCustomUserId(USER_ID: string): void;
-    /**
+  /**
    * Authorization event. The method must be called immediately after the user registers with the application. vkConnectId can be empty string.
    */
   trackLoginEvent(userId: string, vkConnectId: string): void;
-    /**
+  /**
    * Authorization event. The method must be called immediately after the user registers with the application. vkConnectId can be empty string. The user ID must be passed in the userId parameter.
    */
   trackLoginEventWithParams(
@@ -30,7 +30,7 @@ interface IMyTracker {
     vkConnectId: string,
     attributes: Object
   ): void;
-    /**
+  /**
    * An event to send an invitation.
    */
   trackInviteEvent(): void;
@@ -43,11 +43,11 @@ interface IMyTracker {
 To reduce the channel load and minimize the impact on application performance, the SDK buffers all events on the device before sending them to the server, and regularly sends the collected data in a compressed packet. By default, data is sent to the server every 15 minutes. This interval can be set via the bufferingPeriod parameter from 1 second to 1 day. If the user has closed the application, it will be sent the next time it is started. But some events are very important to get to the analytics as early as possible, especially in the first sessions after the installation of the application. The flush() method will help here.
    */
   flush(): void;
-    /**
+  /**
    * Registration event. The method must be called immediately after the user registers with the application. vkConnectId can be empty string.
    */
   trackRegistrationEvent(userId: string, vkConnectId: string): void;
-    /**
+  /**
    * Registration event. The method must be called immediately after the user registers with the application. vkConnectId can be empty string. The user ID must be passed in the userId parameter.
    */
   trackRegistrationEventWithParams(
@@ -106,15 +106,15 @@ If your application requests access to the device's location, you can enable thi
   trackLocation(number: 0 | 1 | 2): void;
   /**
    * The region where the statistics collection server is located. The need to change the region may arise, for example, due to legal requirements. Available values:
-  * @default 0
-  * 0 — region not set(default value)
-  * 1 — server located on the territory of the Russian Federation
-  * 2 — server located in Europe
+   * @default 0
+   * 0 — region not set(default value)
+   * 1 — server located on the territory of the Russian Federation
+   * 2 — server located in Europe
    */
   region(region: 0 | 1 | 2): void;
-    /**
-    *   Enables/disables debug mode. The default is false.
-    * @default 0
+  /**
+   *   Enables/disables debug mode. The default is false.
+   * @default 0
    */
   setDebugMode(enable: boolean): void;
 }
