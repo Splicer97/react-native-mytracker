@@ -1,6 +1,6 @@
 {
   "name": "@splicer97/react-native-mytracker",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "This is unofficial React Native wrapper for myTrackerSDK",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
