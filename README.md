@@ -1,4 +1,4 @@
-# react-native-mytracker
+# react-native-mytracker [![npm version](https://img.shields.io/npm/v/@splicer97/react-native-mytracker.svg?style=flat)](https://www.npmjs.com/package/@splicer97/react-native-mytracker) [![Downloads](https://img.shields.io/npm/dm/@splicer97/react-native-mytracker.svg)](http://www.npmtrends.com/@splicer97/react-native-mytracker)
 
 This is unofficial React Native wrapper for myTrackerSDK
 
