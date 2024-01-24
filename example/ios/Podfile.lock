@@ -75,7 +75,7 @@ PODS:
   - glog (0.3.5)
   - hermes-engine (0.70.5)
   - libevent (2.1.12)
-  - myTrackerSDK (3.0.7)
+  - myTrackerSDK (3.1.5)
   - OpenSSL-Universal (1.1.1100)
   - RCT-Folly (2021.07.22.00):
     - boost
@@ -303,8 +303,8 @@ PODS:
   - React-jsinspector (0.70.5)
   - React-logger (0.70.5):
     - glog
-  - react-native-mytracker (0.6.2):
-    - myTrackerSDK (= 3.0.7)
+  - react-native-mytracker (0.7.2):
+    - myTrackerSDK (= 3.1.5)
     - React-Core
   - React-perflogger (0.70.5)
   - React-RCTActionSheet (0.70.5):
@@ -549,7 +549,7 @@ SPEC CHECKSUMS:
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   hermes-engine: 7fe5fc6ef707b7fdcb161b63898ec500e285653d
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
-  myTrackerSDK: 3b21ddcc191b818d0f39a518413ff98bf6544c76
+  myTrackerSDK: 29a5ff3e80406914c4b89e34d7631b1a3f6df440
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
   RCT-Folly: 0080d0a6ebf2577475bda044aa59e2ca1f909cda
   RCTRequired: 21229f84411088e5d8538f21212de49e46cc83e2
@@ -566,7 +566,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 31564fa6912459921568e8b0e49024285a4d584b
   React-jsinspector: badd81696361249893a80477983e697aab3c1a34
   React-logger: fdda34dd285bdb0232e059b19d9606fa0ec3bb9c
-  react-native-mytracker: 648021ebd3801d3b1f20e70de844b0c8bdf894e5
+  react-native-mytracker: b36b1874f41c2899bfb6001a831e783e4ad0c5bd
   React-perflogger: e68d3795cf5d247a0379735cbac7309adf2fb931
   React-RCTActionSheet: 05452c3b281edb27850253db13ecd4c5a65bc247
   React-RCTAnimation: 578eebac706428e68466118e84aeacf3a282b4da
@@ -585,4 +585,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 9a4c8c8f7e2fbbbb5e416330bf8abc7cff870cbe
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.14.3
