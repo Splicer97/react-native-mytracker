@@ -104,7 +104,7 @@ MyTracker.trackLevelWithLevelWithParams(1, {
   param2: 'name2',
 });
 
-const instanceDd = await MyTracker.getInstanceId();
+const instanceId = await MyTracker.getInstanceId();
 ```
 
 ## Contributing
