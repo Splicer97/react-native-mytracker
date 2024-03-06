@@ -6,8 +6,8 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   MyTracker.initTracker('initTracker');
   const getId = async () => {
-    const id = await MyTracker.getInstanceId();
-    console.log('🚀 ~ getId ~ id:', id);
+    const instanceDd = await MyTracker.getInstanceId();
+    console.log('🚀 ~ getId ~ instanceDd:', instanceDd);
   };
   useEffect(() => {
     getId();
