@@ -1,17 +1,18 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 
 import MyTracker from '@splicer97/react-native-mytracker';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   MyTracker.initTracker('initTracker');
+  const getId = async () => {
+    const id = await MyTracker.getInstanceId();
+    console.log('🚀 ~ getId ~ id:', id);
+  };
+  useEffect(() => {
+    getId();
+  }, []);
 
-  // MyTracker.trackEvent('trackEvent');
-
-  // MyTracker.trackEvent('trackEventWithParams', {
-  //   event1: '1',
-  //   event2: '2',
-  // });
   return (
     <View style={styles.container}>
       <Text>Result</Text>

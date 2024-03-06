@@ -140,6 +140,18 @@ RCT_EXPORT_METHOD(setDebugMode:(BOOL *)enable)
   [MRMyTracker setDebugMode:enable];
 }
 
+
+
+RCT_EXPORT_METHOD(getInstanceId: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+{
+    
+    NSString *instanceId = [MRMyTracker instanceId];
+      
+    resolve(instanceId);
+}
+                  
+                  
+
 // Don't compile this code when we build for the old architecture.
 #ifdef RCT_NEW_ARCH_ENABLED
 - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:

@@ -34,7 +34,7 @@
     "release": "release-it",
     "example": "yarn --cwd example",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build",
-    "bootstrap": "yarn example && yarn install && yarn example pods"
+    "bootstrap": "yarn example && yarn install && yarn example pod"
   },
   "keywords": [
     "react-native",

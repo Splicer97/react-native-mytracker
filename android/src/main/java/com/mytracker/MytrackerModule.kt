@@ -5,6 +5,8 @@ import com.mytracker.MytrackerModule
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import android.app.Application
+import androidx.annotation.WorkerThread
+import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactMethod
 import com.my.tracker.MyTracker
 import com.facebook.react.bridge.ReadableMap
@@ -191,8 +193,14 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
     fun setDebugMode(enable: Boolean) {
         MyTracker.setDebugMode(enable)
     }
+    @ReactMethod
+    @WorkerThread
+    fun getInstanceId(promise: Promise) {
+      val id = MyTracker.getInstanceId(reactApplicationContext)
+      promise.resolve(id)
+    }
 
-    companion object {
+  companion object {
         const val NAME = "MyTracker"
     }
 }

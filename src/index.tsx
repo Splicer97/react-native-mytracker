@@ -117,6 +117,10 @@ If your application requests access to the device's location, you can enable thi
    * @default 0
    */
   setDebugMode(enable: boolean): void;
+  /**
+   *   To transfer data from your server to the MyTracker server (e.g., untracked data, offline events, etc.), you may need a special device identifier, instanceId. The identifier is a UUID v4 value that is generated when the application is first launched and remains unchanged until the application (or application data) is removed from the device
+   */
+  getInstanceId(): Promise<string>;
 }
 const MyTracker: IMyTracker = NativeModules.MyTracker;
 export default MyTracker;
