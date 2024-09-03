@@ -69,7 +69,7 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
     @ReactMethod
     fun setCustomUserId(USER_ID: String?) {
         val trackerParams = MyTracker.getTrackerParams()
-        trackerParams.customUserId = USER_ID
+        trackerParams.setCustomUserId(USER_ID)
     }
 
     @ReactMethod
