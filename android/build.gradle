@@ -132,7 +132,7 @@ def kotlin_version = getExtOrDefault('kotlinVersion')
 dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
-  implementation 'com.my.tracker:mytracker-sdk:3.2.0'
+  implementation 'com.my.tracker:mytracker-sdk:3.3.2'
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 // From node_modules
 }
