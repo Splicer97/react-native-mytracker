@@ -105,14 +105,6 @@ If your application requests access to the device's location, you can enable thi
    */
   trackLocation(number: 0 | 1 | 2): void;
   /**
-   * The region where the statistics collection server is located. The need to change the region may arise, for example, due to legal requirements. Available values:
-   * @default 0
-   * 0 — region not set(default value)
-   * 1 — server located on the territory of the Russian Federation
-   * 2 — server located in Europe
-   */
-  region(region: 0 | 1 | 2): void;
-  /**
    *   Enables/disables debug mode. The default is false.
    * @default 0
    */

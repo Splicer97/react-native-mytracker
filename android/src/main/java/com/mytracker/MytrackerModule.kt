@@ -28,22 +28,22 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
     }
 
     @ReactMethod
-    fun initTracker(SDK_KEY: String?) {
+    fun initTracker(SDK_KEY: String) {
         MyTracker.initTracker(SDK_KEY, application)
     }
 
     @ReactMethod
-    fun trackEvent(name: String?) {
+    fun trackEvent(name: String) {
         MyTracker.trackEvent(name)
     }
 
     @ReactMethod
-    fun trackLoginEvent(userId: String?, vkConnectId: String?) {
+    fun trackLoginEvent(userId: String, vkConnectId: String?) {
         MyTracker.trackLoginEvent(userId, vkConnectId)
     }
 
     @ReactMethod
-    fun trackLoginEventWithParams(userId: String?, vkConnectId: String?, attributes: ReadableMap) {
+    fun trackLoginEventWithParams(userId: String, vkConnectId: String?, attributes: ReadableMap) {
         val map: Map<String, Any> = attributes.toHashMap()
         val params: MutableMap<String, String> = HashMap()
         for ((key, value) in map) {
@@ -55,7 +55,7 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
     }
 
     @ReactMethod
-    fun trackEventWithParams(name: String?, attributes: ReadableMap) {
+    fun trackEventWithParams(name: String, attributes: ReadableMap) {
         val map: Map<String, Any> = attributes.toHashMap()
         val params: MutableMap<String, String> = HashMap()
         for ((key, value) in map) {
@@ -95,13 +95,13 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
     }
 
     @ReactMethod
-    fun trackRegistrationEvent(userId: String?, vkConnectId: String?) {
+    fun trackRegistrationEvent(userId: String, vkConnectId: String?) {
         MyTracker.trackRegistrationEvent(userId, vkConnectId)
     }
 
     @ReactMethod
     fun trackRegistrationEventWithParams(
-        userId: String?,
+        userId: String,
         vkConnectId: String?,
         attributes: ReadableMap
     ) {
@@ -175,17 +175,6 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
         }
         if (number == 1 || number == 2) {
             trackerConfig.isTrackingLocationEnabled = true
-        }
-    }
-
-    @ReactMethod
-    fun region(number: Int) {
-        val trackerConfig = MyTracker.getTrackerConfig()
-        if (number == 1) {
-            trackerConfig.setRegion(MyTrackerConfig.Region.RU)
-        }
-        if (number == 2) {
-            trackerConfig.setRegion(MyTrackerConfig.Region.EU)
         }
     }
 

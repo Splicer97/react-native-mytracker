@@ -121,20 +121,6 @@ RCT_EXPORT_METHOD(trackLocation:(double)number)
     }
 }
 
-RCT_EXPORT_METHOD(region:(double)number)
-{
-    MRMyTrackerConfig *trackerConfig = [MRMyTracker trackerConfig];
-    if(number == 0) {
-        trackerConfig.region = MRRegionNotSet;
-    }
-    if (number == 1) {
-        trackerConfig.region = MRRegionRu;
-    }
-    if (number == 2) {
-        trackerConfig.region = MRRegionEu;
-    }
-}
-
 RCT_EXPORT_METHOD(setDebugMode:(BOOL *)enable)
 {
   [MRMyTracker setDebugMode:enable];
@@ -144,13 +130,13 @@ RCT_EXPORT_METHOD(setDebugMode:(BOOL *)enable)
 
 RCT_EXPORT_METHOD(getInstanceId: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
-    
+
     NSString *instanceId = [MRMyTracker instanceId];
-      
+
     resolve(instanceId);
 }
-                  
-                  
+
+
 
 // Don't compile this code when we build for the old architecture.
 #ifdef RCT_NEW_ARCH_ENABLED

@@ -52,16 +52,6 @@ MyTracker.forcingPeriod(30);
 // 1 or 2 = true - track the user's location
 MyTracker.trackLocation(0);
 
-//for IOS:
-// 0 = MRRegionNotSet — default value
-// 1 = MRRegionRu — server located on the territory of the Russian Federation
-// 2 = MRRegionEu — server located in Europe
-// for Android:
-// 0 - default value
-// 1 = Region.RU — server located on the territory of the Russian Federation
-// 2 = Region.EU — server located in Europe
-MyTracker.region(0);
-
 MyTracker.setDebugMode(false);
 
 //MyTracker Events
