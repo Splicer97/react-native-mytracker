@@ -142,6 +142,19 @@
     "trailingComma": "es5",
     "useTabs": false
   },
+  "codegenConfig": {
+    "name": "RNMytrackerSpec",
+    "type": "all",
+    "jsSrcsDir": "src",
+    "outputDir": {
+      "ios": "ios/generated",
+      "android": "android/generated"
+    },
+    "android": {
+      "javaPackageName": "com.mytracker"
+    },
+    "includesGeneratedCode": true
+  },
   "react-native-builder-bob": {
     "source": "src",
     "output": "lib",
