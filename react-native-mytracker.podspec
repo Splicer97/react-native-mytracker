@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => "12.4" }
   s.source       = { :git => "https://github.com/Splicer97/react-native-mytracker.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,m,mm}"
+  s.source_files = "ios/**/*.{h,m,mm,cpp}"
 
   s.dependency "React-Core"
   s.dependency "myTrackerSDK", '3.2.0'
