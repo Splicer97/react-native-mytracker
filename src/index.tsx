@@ -1,6 +1,6 @@
 import type { Spec } from './NativeMytracker';
 
-const MyTracker: Spec = require('./NativeMyTracker').default;
+const MyTracker: Spec = require('./NativeMytracker').default;
 
 function initTracker(SDK_KEY: string): void {
   return MyTracker.initTracker(SDK_KEY);
