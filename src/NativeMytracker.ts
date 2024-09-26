@@ -2,6 +2,14 @@ import type { TurboModule } from 'react-native';
 
 import { TurboModuleRegistry } from 'react-native';
 
+// Union types are unsupported in structs
+// so we replace it with enums
+enum LocationTrackingMode {
+  TrackingModeNone = 0,
+  TrackingModeCached = 1,
+  TrackingModeActive = 2,
+}
+
 export interface Spec extends TurboModule {
   /**
    * Initializing the tracker
@@ -105,7 +113,7 @@ If your application requests access to the device's location, you can enable thi
   * 0 - do not track the user's location (default);
   * 1 or 2 - track the user's location;
    */
-  trackLocation(number: 0 | 1 | 2): void;
+  trackLocation(number: LocationTrackingMode): void;
   /**
    *   Enables/disables debug mode. The default is false.
    * @default 0
