@@ -2,6 +2,13 @@
 
 This is unofficial React Native wrapper for myTrackerSDK
 
+## React Native Support
+
+| version | react-native version |
+| ------- | -------------------- |
+| < 1.0.0 | < 0.76.0             |
+| 1.0.0+  | 0.76.0+              |
+
 ## Installation
 
 ```sh
