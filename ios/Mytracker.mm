@@ -2,112 +2,110 @@
 #import <MyTrackerSDK/MyTrackerSDK.h>
 
 @implementation Mytracker
-RCT_EXPORT_MODULE(MyTracker)
+RCT_EXPORT_MODULE()
 
-// Example method
-// See // https://reactnative.dev/docs/native-modules-ios
-RCT_EXPORT_METHOD(initTracker:(NSString *)SDK_KEY)
+- (void)initTracker:(NSString *)SDK_KEY
 {
     [MRMyTracker setupTracker:SDK_KEY];
 }
 
-RCT_EXPORT_METHOD(trackEvent:(NSString *)name)
+- (void)trackEvent:(NSString *)name
 {
     [MRMyTracker trackEventWithName:name];
 }
 
-RCT_EXPORT_METHOD(trackLoginEvent:(NSString *)userId vkConnectId:(NSString *)vkConnectId)
+- (void)trackLoginEvent:(NSString *)userId vkConnectId:(NSString *)vkConnectId
 {
     [MRMyTracker trackLoginEvent:userId withVkConnectId:vkConnectId];
 }
 
-RCT_EXPORT_METHOD(trackLoginEventWithParams:(NSString *)userId vkConnectId:(NSString *)vkConnectId eventParams:(nullable NSDictionary *) eventParams)
+- (void)trackLoginEventWithParams:(NSString *)userId vkConnectId:(NSString *)vkConnectId eventParams:(nullable NSDictionary *) eventParams
 {
     [MRMyTracker trackLoginEvent:userId  withVkConnectId:vkConnectId params:eventParams];
 }
 
-RCT_EXPORT_METHOD(trackEventWithParams:(NSString *)name eventParams:(nullable NSDictionary *) eventParams)
+- (void)trackEventWithParams:(NSString *)name eventParams:(nullable NSDictionary *) eventParams
 {
     [MRMyTracker trackEventWithName:name eventParams:eventParams];
 }
 
-RCT_EXPORT_METHOD(setCustomUserId:(NSString *)USER_ID)
+- (void)setCustomUserId:(NSString *)USER_ID
 {
     MRMyTrackerParams *trackerParams = [MRMyTracker trackerParams];
     trackerParams.customUserId = USER_ID;
 }
 
-RCT_EXPORT_METHOD(trackLaunchEnable:(BOOL *)enable)
+- (void)trackLaunchEnable:(BOOL)enable
 {
     MRMyTrackerConfig *trackerConfig = [MRMyTracker trackerConfig];
     trackerConfig.trackLaunch = enable;
 }
 
-RCT_EXPORT_METHOD(trackInviteEvent)
+- (void)trackInviteEvent
 {
    [MRMyTracker trackInviteEvent];
 }
 
-RCT_EXPORT_METHOD(trackInviteEventWithParams:(nullable NSDictionary *) eventParams)
+- (void)trackInviteEventWithParams:(nullable NSDictionary *) eventParams
 {
     [MRMyTracker trackInviteEventWithParams:eventParams];
 }
 
-RCT_EXPORT_METHOD(flush)
+- (void)flush
 {
     [MRMyTracker flush];
 }
 
-RCT_EXPORT_METHOD(trackRegistrationEvent:(NSString *)userId vkConnectId:(NSString *)vkConnectId)
+- (void)trackRegistrationEvent:(NSString *)userId vkConnectId:(NSString *)vkConnectId
 {
     [MRMyTracker trackRegistrationEvent:userId withVkConnectId:vkConnectId];
 }
 
-RCT_EXPORT_METHOD(trackRegistrationEventWithParams:(NSString *)userId vkConnectId:(NSString *)vkConnectId eventParams:(nullable NSDictionary *) eventParams)
+- (void)trackRegistrationEventWithParams:(NSString *)userId vkConnectId:(NSString *)vkConnectId eventParams:(nullable NSDictionary *) eventParams
 {
     [MRMyTracker trackRegistrationEvent:userId  withVkConnectId:vkConnectId params:eventParams];
 }
 
-RCT_EXPORT_METHOD(trackLevel)
+- (void)trackLevel
 {
     [MRMyTracker trackLevelAchieved];
 }
 
-RCT_EXPORT_METHOD(trackLevelWithLevel:(nonnull NSNumber *)level)
+- (void)trackLevelWithLevel:(nonnull NSNumber *)level
 {
   [MRMyTracker trackLevelAchievedWithLevel:level];
 }
 
-RCT_EXPORT_METHOD(trackLevelWithLevelWithParams:(nonnull NSNumber *)level params:(nullable NSDictionary *)params)
+- (void)trackLevelWithLevelWithParams:(nonnull NSNumber *)level params:(nullable NSDictionary *)params
 {
   [MRMyTracker trackLevelAchievedWithLevel:level eventParams:params];
 }
 
-RCT_EXPORT_METHOD(trackLaunchTimeout:(double)seconds)
+- (void)trackLaunchTimeout:(double)seconds
 {
     MRMyTrackerConfig *trackerConfig = [MRMyTracker trackerConfig];
     trackerConfig.launchTimeout = seconds;
 }
 
-RCT_EXPORT_METHOD(bufferingPeriod:(double)seconds)
+- (void)bufferingPeriod:(double)seconds
 {
     MRMyTrackerConfig *trackerConfig = [MRMyTracker trackerConfig];
     trackerConfig.bufferingPeriod = seconds;
 }
 
-RCT_EXPORT_METHOD(forcingPeriod:(double)seconds)
+- (void)forcingPeriod:(double)seconds
 {
     MRMyTrackerConfig *trackerConfig = [MRMyTracker trackerConfig];
     trackerConfig.forcingPeriod = seconds;
 }
 
-RCT_EXPORT_METHOD(autotrackPurchase:(BOOL *)enable)
+- (void)autotrackPurchase:(BOOL)enable
 {
     MRMyTrackerConfig *trackerConfig = [MRMyTracker trackerConfig];
     trackerConfig.autotrackPurchase = enable;
 }
 
-RCT_EXPORT_METHOD(trackLocation:(double)number)
+- (void)trackLocation:(double)number
 {
     MRMyTrackerConfig *trackerConfig = [MRMyTracker trackerConfig];
     if(number == 0) {
@@ -121,19 +119,19 @@ RCT_EXPORT_METHOD(trackLocation:(double)number)
     }
 }
 
-RCT_EXPORT_METHOD(setDebugMode:(BOOL *)enable)
+- (void)setDebugMode:(BOOL)enable
 {
   [MRMyTracker setDebugMode:enable];
 }
 
 
 
-RCT_EXPORT_METHOD(getInstanceId: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+- (NSString *)getInstanceId
 {
 
     NSString *instanceId = [MRMyTracker instanceId];
 
-    resolve(instanceId);
+    return instanceId;
 }
 
 

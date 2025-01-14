@@ -16,7 +16,7 @@ import com.my.tracker.MyTrackerConfig
 
 @ReactModule(name = MytrackerModule.NAME)
 class MytrackerModule(reactContext: ReactApplicationContext) :
-    ReactContextBaseJavaModule(reactContext) {
+    NativeMytrackerSpec(reactContext) {
     private val application: Application
 
     init {
@@ -27,23 +27,22 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
         return NAME
     }
 
-    @ReactMethod
-    fun initTracker(SDK_KEY: String) {
+    override fun initTracker(SDK_KEY: String) {
         MyTracker.initTracker(SDK_KEY, application)
     }
 
-    @ReactMethod
-    fun trackEvent(name: String) {
+
+   override fun trackEvent(name: String) {
         MyTracker.trackEvent(name)
     }
 
-    @ReactMethod
-    fun trackLoginEvent(userId: String, vkConnectId: String?) {
+
+   override fun trackLoginEvent(userId: String, vkConnectId: String?) {
         MyTracker.trackLoginEvent(userId, vkConnectId)
     }
 
-    @ReactMethod
-    fun trackLoginEventWithParams(userId: String, vkConnectId: String?, attributes: ReadableMap) {
+
+  override fun trackLoginEventWithParams(userId: String, vkConnectId: String?, attributes: ReadableMap) {
         val map: Map<String, Any> = attributes.toHashMap()
         val params: MutableMap<String, String> = HashMap()
         for ((key, value) in map) {
@@ -54,8 +53,8 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
         MyTracker.trackLoginEvent(userId, vkConnectId, params)
     }
 
-    @ReactMethod
-    fun trackEventWithParams(name: String, attributes: ReadableMap) {
+
+   override fun trackEventWithParams(name: String, attributes: ReadableMap) {
         val map: Map<String, Any> = attributes.toHashMap()
         val params: MutableMap<String, String> = HashMap()
         for ((key, value) in map) {
@@ -66,19 +65,19 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
         MyTracker.trackEvent(name, params)
     }
 
-    @ReactMethod
-    fun setCustomUserId(USER_ID: String?) {
+
+   override fun setCustomUserId(USER_ID: String?) {
         val trackerParams = MyTracker.getTrackerParams()
         trackerParams.setCustomUserId(USER_ID)
     }
 
-    @ReactMethod
-    fun trackInviteEvent() {
+
+   override fun trackInviteEvent() {
         MyTracker.trackInviteEvent()
     }
 
-    @ReactMethod
-    fun trackInviteEventWithParams(attributes: ReadableMap) {
+
+   override fun trackInviteEventWithParams(attributes: ReadableMap) {
         val map: Map<String, Any> = attributes.toHashMap()
         val params: MutableMap<String, String> = HashMap()
         for ((key, value) in map) {
@@ -89,18 +88,18 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
         }
     }
 
-    @ReactMethod
-    fun flush() {
+
+   override fun flush() {
         MyTracker.flush()
     }
 
-    @ReactMethod
-    fun trackRegistrationEvent(userId: String, vkConnectId: String?) {
+
+   override fun trackRegistrationEvent(userId: String, vkConnectId: String?) {
         MyTracker.trackRegistrationEvent(userId, vkConnectId)
     }
 
-    @ReactMethod
-    fun trackRegistrationEventWithParams(
+
+   override fun trackRegistrationEventWithParams(
         userId: String,
         vkConnectId: String?,
         attributes: ReadableMap
@@ -115,18 +114,18 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
         MyTracker.trackRegistrationEvent(userId, vkConnectId, params)
     }
 
-    @ReactMethod
-    fun trackLevel() {
+
+   override fun trackLevel() {
         MyTracker.trackLevelEvent()
     }
 
-    @ReactMethod
-    fun trackLevelWithLevel(level: Int) {
-        MyTracker.trackLevelEvent(level, null as Map<String?, String?>?)
+
+   override fun trackLevelWithLevel(level: Double) {
+        MyTracker.trackLevelEvent(level.toInt(), null as Map<String?, String?>?)
     }
 
-    @ReactMethod
-    fun trackLevelWithLevelWithParams(level: Int, attributes: ReadableMap) {
+
+   override fun trackLevelWithLevelWithParams(level: Double, attributes: ReadableMap) {
         val map: Map<String, Any> = attributes.toHashMap()
         val params: MutableMap<String, String> = HashMap()
         for ((key, value) in map) {
@@ -134,62 +133,61 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
                 params[key] = value
             }
         }
-        MyTracker.trackLevelEvent(level, params)
+        MyTracker.trackLevelEvent(level.toInt(), params)
     }
 
-    @ReactMethod
-    fun trackLaunchEnable(enable: Boolean) {
+
+   override fun trackLaunchEnable(enable: Boolean) {
         val trackerConfig = MyTracker.getTrackerConfig()
         trackerConfig.isTrackingLaunchEnabled = enable
     }
 
-    @ReactMethod
-    fun trackLaunchTimeout(seconds: Int) {
+
+   override fun trackLaunchTimeout(seconds: Double) {
         val trackerConfig = MyTracker.getTrackerConfig()
-        trackerConfig.launchTimeout = seconds
+        trackerConfig.launchTimeout = seconds.toInt()
     }
 
-    @ReactMethod
-    fun bufferingPeriod(seconds: Int) {
+
+   override fun bufferingPeriod(seconds: Double) {
         val trackerConfig = MyTracker.getTrackerConfig()
-        trackerConfig.bufferingPeriod = seconds
+        trackerConfig.bufferingPeriod = seconds.toInt()
     }
 
-    @ReactMethod
-    fun forcingPeriod(seconds: Int) {
+
+   override fun forcingPeriod(seconds: Double) {
         val trackerConfig = MyTracker.getTrackerConfig()
-        trackerConfig.forcingPeriod = seconds
+        trackerConfig.forcingPeriod = seconds.toInt()
     }
 
-    @ReactMethod
-    fun autotrackPurchase(enable: Boolean) {
+
+   override fun autotrackPurchase(enable: Boolean) {
         val trackerConfig = MyTracker.getTrackerConfig()
         trackerConfig.isAutotrackingPurchaseEnabled = enable
     }
 
-    @ReactMethod
-    fun trackLocation(number: Int) {
+
+   override fun trackLocation(number: Double) {
         val trackerConfig = MyTracker.getTrackerConfig()
-        if (number == 0) {
+        if (number.toInt() == 0) {
             trackerConfig.isTrackingLocationEnabled = false
         }
-        if (number == 1 || number == 2) {
+        if (number.toInt() == 1 || number.toInt() == 2) {
             trackerConfig.isTrackingLocationEnabled = true
         }
     }
 
-    @ReactMethod
-    fun setDebugMode(enable: Boolean) {
+
+   override fun setDebugMode(enable: Boolean) {
         MyTracker.setDebugMode(enable)
     }
-    @ReactMethod
-    @WorkerThread
-    fun getInstanceId(promise: Promise) {
+
+   override fun getInstanceId(): String {
       val id = MyTracker.getInstanceId(reactApplicationContext)
-      promise.resolve(id)
+      return id
     }
 
   companion object {
-        const val NAME = "MyTracker"
+        const val NAME = "Mytracker"
     }
 }

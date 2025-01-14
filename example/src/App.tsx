@@ -5,12 +5,9 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   MyTracker.initTracker('initTracker');
-  const getId = async () => {
-    const instanceId = await MyTracker.getInstanceId();
-    console.log('🚀 ~ getId ~ instanceId:', instanceId);
-  };
   useEffect(() => {
-    getId();
+    const instanceId = MyTracker.getInstanceId();
+    console.log('🚀 ~ getId ~ instanceId:', instanceId);
   }, []);
 
   return (

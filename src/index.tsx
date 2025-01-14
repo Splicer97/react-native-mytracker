@@ -98,7 +98,7 @@ function setDebugMode(enable: boolean): void {
   return MyTracker.setDebugMode(enable);
 }
 
-function getInstanceId(): Promise<string> {
+function getInstanceId(): string {
   return MyTracker.getInstanceId();
 }
 
