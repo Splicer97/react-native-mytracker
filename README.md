@@ -4,6 +4,8 @@ This is unofficial React Native wrapper for myTrackerSDK
 
 ## React Native Support
 
+Since version 1.0.0 the library can only be used on the new architecture
+
 | version | react-native version |
 | ------- | -------------------- |
 | < 1.0.0 | < 0.76.0             |
