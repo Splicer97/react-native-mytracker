@@ -9,7 +9,7 @@ Since version 1.0.0 the library can only be used on the new architecture
 | version | react-native version |
 | ------- | -------------------- |
 | < 1.0.0 | < 0.76.0             |
-| 1.0.0+  | 0.76.*               |
+| 1.0.0   | 0.76.*               |
 | 2.0.0+  | 0.77.0+              |
 
 ## Installation
