@@ -1,18 +1,11 @@
 package com.mytracker
 
 import com.facebook.react.module.annotations.ReactModule
-import com.mytracker.MytrackerModule
 import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactContextBaseJavaModule
 import android.app.Application
-import androidx.annotation.WorkerThread
-import com.facebook.react.bridge.Promise
-import com.facebook.react.bridge.ReactMethod
 import com.my.tracker.MyTracker
 import com.facebook.react.bridge.ReadableMap
 import java.util.HashMap
-import com.my.tracker.MyTrackerParams
-import com.my.tracker.MyTrackerConfig
 
 @ReactModule(name = MytrackerModule.NAME)
 class MytrackerModule(reactContext: ReactApplicationContext) :
@@ -43,7 +36,7 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
 
 
   override fun trackLoginEventWithParams(userId: String, vkConnectId: String?, attributes: ReadableMap) {
-        val map: Map<String, Any> = attributes.toHashMap()
+        val map: HashMap<String, Any?> = attributes.toHashMap()
         val params: MutableMap<String, String> = HashMap()
         for ((key, value) in map) {
             if (value is String) {
@@ -55,7 +48,7 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
 
 
    override fun trackEventWithParams(name: String, attributes: ReadableMap) {
-        val map: Map<String, Any> = attributes.toHashMap()
+        val map: HashMap<String, Any?> = attributes.toHashMap()
         val params: MutableMap<String, String> = HashMap()
         for ((key, value) in map) {
             if (value is String) {
@@ -78,7 +71,7 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
 
 
    override fun trackInviteEventWithParams(attributes: ReadableMap) {
-        val map: Map<String, Any> = attributes.toHashMap()
+        val map: HashMap<String, Any?> = attributes.toHashMap()
         val params: MutableMap<String, String> = HashMap()
         for ((key, value) in map) {
             if (value is String) {
@@ -104,7 +97,7 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
         vkConnectId: String?,
         attributes: ReadableMap
     ) {
-        val map: Map<String, Any> = attributes.toHashMap()
+        val map: HashMap<String, Any?> = attributes.toHashMap()
         val params: MutableMap<String, String> = HashMap()
         for ((key, value) in map) {
             if (value is String) {
@@ -126,7 +119,7 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
 
 
    override fun trackLevelWithLevelWithParams(level: Double, attributes: ReadableMap) {
-        val map: Map<String, Any> = attributes.toHashMap()
+        val map: HashMap<String, Any?> = attributes.toHashMap()
         val params: MutableMap<String, String> = HashMap()
         for ((key, value) in map) {
             if (value is String) {
@@ -169,12 +162,7 @@ class MytrackerModule(reactContext: ReactApplicationContext) :
 
    override fun trackLocation(number: Double) {
         val trackerConfig = MyTracker.getTrackerConfig()
-        if (number.toInt() == 0) {
-            trackerConfig.isTrackingLocationEnabled = false
-        }
-        if (number.toInt() == 1 || number.toInt() == 2) {
-            trackerConfig.isTrackingLocationEnabled = true
-        }
+        trackerConfig.setLocationTrackingMode(number.toInt())
     }
 
 

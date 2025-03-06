@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
+#import <ReactAppDependencyProvider/RCTAppDependencyProvider.h>
 
 @implementation AppDelegate
 
@@ -9,6 +10,7 @@
   self.moduleName = @"MytrackerExample";
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
+  self.dependencyProvider = [RCTAppDependencyProvider new];
   self.initialProps = @{};
 
   return [super application:application didFinishLaunchingWithOptions:launchOptions];

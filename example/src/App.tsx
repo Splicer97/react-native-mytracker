@@ -1,18 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import MyTracker from '@splicer97/react-native-mytracker';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   MyTracker.initTracker('initTracker');
-  useEffect(() => {
-    const instanceId = MyTracker.getInstanceId();
-    console.log('🚀 ~ getId ~ instanceId:', instanceId);
-  }, []);
+  const instanceId = MyTracker.getInstanceId();
 
   return (
     <View style={styles.container}>
-      <Text>Result</Text>
+      <Text>instanceId</Text>
+      <Text>{instanceId}</Text>
     </View>
   );
 }
@@ -22,6 +20,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'white',
   },
   box: {
     width: 60,

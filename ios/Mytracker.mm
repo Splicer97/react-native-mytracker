@@ -46,7 +46,7 @@ RCT_EXPORT_MODULE()
    [MRMyTracker trackInviteEvent];
 }
 
-- (void)trackInviteEventWithParams:(nullable NSDictionary *) eventParams
+- (void)trackInviteEventWithParams:(NSDictionary *) eventParams
 {
     [MRMyTracker trackInviteEventWithParams:eventParams];
 }
@@ -76,7 +76,7 @@ RCT_EXPORT_MODULE()
   [MRMyTracker trackLevelAchievedWithLevel:level];
 }
 
-- (void)trackLevelWithLevelWithParams:(nonnull NSNumber *)level params:(nullable NSDictionary *)params
+- (void)trackLevelWithLevelWithParams:(nonnull NSNumber *)level params:(NSDictionary *)params
 {
   [MRMyTracker trackLevelAchievedWithLevel:level eventParams:params];
 }
