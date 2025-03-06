@@ -10,6 +10,7 @@ Since version 1.0.0 the library can only be used on the new architecture
 | ------- | -------------------- |
 | < 1.0.0 | < 0.76.0             |
 | 1.0.0+  | 0.76.0+              |
+| 2.0.0+  | 0.77.0+              |
 
 ## Installation
 
@@ -52,13 +53,9 @@ MyTracker.bufferingPeriod(30);
 
 MyTracker.forcingPeriod(30);
 
-//for IOS:
-// 0 = MRLocationTrackingModeNone — location is not tracked
-// 1 = MRLocationTrackingModeCached — uses the system's cached value
-// 2 = MRLocationTrackingModeActive — uses a request for the current location (default)
-// for Android:
-// 0 = false - do not track the user's location (default)
-// 1 or 2 = true - track the user's location
+// 0  — location is not tracked
+// 1  — uses the system's cached value
+// 2  — uses a request for the current location (default)
 MyTracker.trackLocation(0);
 
 MyTracker.setDebugMode(false);

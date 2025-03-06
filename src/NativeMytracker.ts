@@ -105,13 +105,9 @@ To reduce the channel load and minimize the impact on application performance, t
    * Tracking the user's location. The default is false.
 If your application requests access to the device's location, you can enable this option to improve the accuracy of statistics related to the user's geography. In some cases, location tracking also improves attribution and predictive model performance.
   * @default 0
-  * @platform IOS:
   * 0 — location is not tracked;
   * 1 — uses the system's cached value;
   * 2 — uses a request for the current location (default);
-  * @platform Android:
-  * 0 - do not track the user's location (default);
-  * 1 or 2 - track the user's location;
    */
   trackLocation(number: LocationTrackingMode): void;
   /**
